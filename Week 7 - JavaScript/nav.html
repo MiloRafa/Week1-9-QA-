@@ -1,0 +1,45 @@
+<html>
+<head>
+	<script>
+	
+	function check(){
+		
+	}
+	function bhayj(){
+	var r=true;
+		if(document.getElementById("A1").value==""){
+					document.getElementById("usernameerror").style.visibility='visible';
+					document.getElementById("A1").focus();
+					r=false;	
+		}
+		else{
+		document.getElementById("usernameerror").style.visibility='hidden';
+		}
+		if(document.getElementById("B1").value==""){
+					document.getElementById("pwderror").style.visibility='visible';
+					document.getElementById("A1").focus();
+					r= false;	
+		}else{
+					document.getElementById("pwderror").style.visibility='hidden';
+		}
+		if(r){
+			document.getElementById("form").submit();
+		}
+	}
+	</script>
+</head>
+<body>
+
+
+
+<br>
+
+
+<form id="form" action= "process.html" method= "Post">
+Username: <input type= "Text" name= "A" id="A1"><span id="usernameerror" style="color:red;;visibility:hidden"> **Username missing</span><Br>
+<br>
+Password: <input file+ "Text" name= "B" id= "B1"><span id="pwderror" style="color:red;visibility:hidden"> **Password missing</span></Br>
+<br>
+</form>
+<img src="tick.png" width="10%" onclick="bhayj()"></img>
+</body>

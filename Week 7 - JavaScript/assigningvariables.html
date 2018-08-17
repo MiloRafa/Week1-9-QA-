@@ -1,0 +1,21 @@
+<html>
+
+<script>
+
+function Add() {
+var TextBox1 = window.document.F.x;
+var TextBox2 = window.document.F.y;
+var TextBox3 = window.document.F.z;
+
+TextBox3.value = parseInt(TextBox1.value) + parseInt(TextBox2.value);
+TextBox3.focus();
+}
+
+</script>
+
+<form name= "F">
+<input name = "x">
+<input name = "y">
+<input type = "Button" onclick="Add()" value="click">
+<input name = "z">
+</form>

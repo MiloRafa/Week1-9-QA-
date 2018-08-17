@@ -1,0 +1,93 @@
+<html>
+<head>
+	<script>
+	
+		var span = window.document.getElementById("sp");
+	
+		span.style.top = window.event.clientY;
+	
+		span.style.left = window.event.clientX;
+	
+		if (window.event.ctrlKey) { //ctrl key changes font - bigger
+		++fs;
+		}
+	
+		if (window.event.altKey) { //alt key changes font - smaller
+		--fs;
+		}
+	
+		span.style.fontSize = fs;
+	
+	}
+	
+	
+	function pickup() {
+	
+		var sp = window.document.getElementById("sp");
+		var t = window.document.getElementById("t");
+		
+		if (t.value != "") {
+		
+		sp.innerHTML = t.value;
+		
+		t.value = "";
+	
+		}
+		
+	function red() {
+	
+		var sp = window.document.getElementById("spR");
+		var t = window.document.getElementById("t");
+		
+		span.style.fontcolor = fs;
+		
+		if(window.event.clientX){
+		
+			t.fontcolor("red");
+	
+
+		//if you hover over the div box it changes font to red
+	
+	
+		}
+		
+	function green() {
+	
+
+		}
+		
+	
+	function yellow(){
+	
+	
+	}
+	
+	function blue() {
+	
+	
+	}
+	
+	
+	
+	
+	</script>
+</head>
+
+<body onmousemove="moving()" onkeypress="keypress(event)">
+
+<input id="t" align="top-left" onmouseleave="pickup()">
+
+<span id="red" style="position: top-left; background-color:red"; onmousemove="red()"> </span>
+
+
+<span id="yellow" style="position: absolute"; onmousemove="yellow()"></span>
+
+
+<span id="green" style="position: top-right;" onmousemove="green()"></span>
+
+
+<span id="blue" style="position: bottom-right;" onmousemove="blue()" ></span>
+
+
+</body>
+</html>

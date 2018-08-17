@@ -1,0 +1,34 @@
+<html>
+<head>
+	<script>
+	
+	function Add() {
+		var no1 = window.document.forms[0].elements[0].value;
+		var no2 = window.document.forms[0].elements[1].value;
+		
+		var Add = parseInt(no1) + parseInt(no2);
+		var Sub = parseInt(no1) - parseInt(no2);
+		var Mul = parseInt(no1) * parseInt(no2);
+		var Div = parseInt(no1) / parseInt(no2);
+		window.document.forms[0].elements[3].value = Add;
+		window.document.forms[1].elements[0].value = Sub;
+		window.document.forms[1].elements[1].value = Mul;
+		window.document.forms[1].elements[2].value = Div;
+	}
+
+</script>
+
+<form>
+
+<input>     <input>
+
+<input type = "Button" onclick = "Add()" value="calc">
+<br>
+<br>
++ <input>
+
+</form>
+
+<form>
+<br>
+-  <input> <br> <br> x  <input> <br> <br> /  <input>

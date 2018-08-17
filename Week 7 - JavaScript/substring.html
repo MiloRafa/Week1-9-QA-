@@ -1,0 +1,93 @@
+<html>
+<head>
+	<script>
+	
+	function caps(){ //create function
+		if(window.document.F2.T1.value ==""){ //checks if the T1 box has an empty value
+			window.alert("Please enter a value to return a output"); // return an alert box
+			window.document.F2.T1.focus(); //focuses on the box that returns an error
+		}
+		
+		else {
+			var message=window.document.F2.T1.value; //storing value of t1 into the message variable
+			var result=""; //making a result variable
+			//window.alert(message);
+			for(var i=0;i<message.length;i++){ 
+			// for loop to check the whole length of the message variable and check each character
+				var check=message.substring(i,i+1)
+				// picking up one character at a time (substring) and storing it in the check variable
+				if(check==check.toUpperCase()){
+				//if the one character stored in check is capital 
+				// to uppercase is a function which converts any character to capital letters
+					result+=check;
+					//if that character is capital then store it in the result variable
+				}
+		}
+		window.document.F2.T2.value=result;
+		//assigns the result to the value property of T2
+		}
+	}
+	
+	function lowercase(){ //create function
+		if( window.document.F2.T1.value ==""){
+			window.alert("Please enter a value to return a output");
+			window.document.F2.T1.focus();
+		}
+		
+		else {
+			var message=window.document.F2.T1.value;
+			var result="";
+			for (var i=0; i<message.length; i++){
+				var check=message.substring(i,i+1)
+				if (check==check.toLowerCase()) {
+					result+=check;		
+				}
+			}
+		
+		window.document.F2.T2.value=result;
+
+		}
+	}
+		
+	function numbers(){ //create function
+		if( window.document.F2.T1.value ==""){
+			window.alert("Please enter a value to return a output");
+			window.document.F2.T1.focus();
+		}
+		
+		
+	}
+		
+		window.document.F2.T2.value=result;
+
+		}
+	}
+	
+	function specialchar(){ //create function
+		if( window.document.F2.T1.value ==""){
+			window.alert("Please enter a value to return a output");
+			window.document.F2.T1.focus();
+		}
+	}
+		
+	</script>
+</head>
+<body>
+	<form name = "F2">
+	
+		
+		<b> Message : </b> <input Type = "Text" name = "T1"> <br>
+		
+		<br>
+		<input Type = "Button" value = "ABC" onclick = "caps()" name = "B1">		
+		<input Type = "Button" value = "abc" onclick = "lowercase()" name = "B2">
+		<input Type = "Button" value = "123" onclick = "numbers()" name = "B3">
+		<input Type = "Button" value = ",/*" onclick = "specialchar()" name = "B4"> <br>
+		
+		<br>
+		
+
+		<b> Output : </b> <input Type = "Text" name = "T2"> <br>
+		
+	</form>
+</html>

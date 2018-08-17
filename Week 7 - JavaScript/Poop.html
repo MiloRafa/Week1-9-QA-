@@ -1,0 +1,67 @@
+<html>
+<head>
+	<script>
+	
+	function add(){ //create function
+		if( window.document.F2.T1.value ==""){
+			window.alert("The first No. is missing");
+			window.document.F2.T1.focus();
+		}
+			
+		else if( window.document.F2.T2.value ==""){
+			window.alert("The second No. is missing");
+			window.document.F2.T2.focus();
+		}
+			
+		else {
+			var A = window.document.F2.T1.value; //creating a variable that refers to the window             
+			var B = window.document.F2.T2.value;
+			var C = parseInt(A) + parseInt(B);
+			window.document.F2.T3.value = C;
+		}
+	}
+		
+	function subtract() {
+			var A = window.document.F2.T1.value;
+			var B = window.document.F2.T2.value;
+			var C = parseInt(A) - parseInt(B);
+			window.document.F2.T3.value = C;
+	}
+	function multiply() {
+			var A = window.document.F2.T1.value;
+			var B = window.document.F2.T2.value;
+			var C = parseInt(A) * parseInt(B);
+			window.document.F2.T3.value = C;
+	}
+	function divide() {
+			var A = window.document.F2.T1.value;
+			var B = window.document.F2.T2.value;   
+			var C = parseInt(A) / parseInt(B);
+			window.document.F2.T3.value = C;
+	}
+			
+			
+	</script>
+</head>
+<body>
+	<form name = "F2">
+	
+		
+		<b> First No : </b> <input Type = "Text" name = "T1"> <br>
+		<br>
+		<b> Second No : </b> <input Type = "Text" name = "T2"> <br>
+		<br>
+		<b> Result : </b> <input Type = "Text" name = "T3"> <br>
+		
+		<br>
+		
+		<input Type = "Button" value = "Add" onclick = "add()" name = "B">		
+		<input Type = "Button" value = "Subtract" onclick = "subtract()" name = "B">
+		<input Type = "Button" value = "Multiply" onclick = "multiply()" name = "B">
+		<input Type = "Button" value = "Divide" onclick = "divide()" name = "B">
+
+
+		<br>
+		<br>
+	</form>
+</html>

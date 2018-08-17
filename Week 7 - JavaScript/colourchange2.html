@@ -1,0 +1,90 @@
+<html>
+<head>
+	<script>
+	
+	var fs =10;
+	function moving() {
+	
+		var span = window.document.getElementById("sp");
+		var t = window.document.getElementById("t");
+		var red = window.document.getElementById("red");
+
+	
+		span.style.top = window.event.clientY;
+	
+		span.style.left = window.event.clientX;
+	
+		if (window.event.ctrlKey) {
+		++fs;
+		}
+	
+		if (window.event.altKey) {
+		--fs;
+		}
+	
+		if (window.event.onmouseover) {
+		
+		span.style.fontcolor("red");
+
+		}
+		
+		span.style.fontSize = fs;
+	
+	}
+	
+	
+	function pickup() {
+	
+		var sp = window.document.getElementById("sp");
+		var t = window.document.getElementById("t");
+		
+		if (t.value != "") {
+		
+		sp.innerHTML = t.value;
+		
+		t.value = "";
+	
+		}
+	}
+	
+	function red() {
+	
+		var sp = window.document.getElementById("sp");
+		var t = window.document.getElementById("t");
+		var red = window.document.getElementById("red");
+		
+		
+		//create a reference for red
+		//store it
+		
+		//if the onmouseover event happens
+			//the span holding the text
+			//change font to red
+			
+			
+			
+		span.style.fontcolor = fs;
+		
+		if(window.event.clientX){
+		
+			t.fontcolor("red");
+		
+	
+		}
+		
+	}
+	
+	</script>
+</head>
+
+<body onmousemove="moving()" onkeypress="keypress(event)">
+
+<input id="t" align="bottom" onmouseleave="pickup()">
+
+<span id="sp" style="position: absolute;"></span>
+
+<span id="red" style="position: absolute; "color:red" onmouseover="red()"></span>
+
+
+</body>
+</html>

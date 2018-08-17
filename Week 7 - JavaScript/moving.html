@@ -1,0 +1,20 @@
+<html>
+<head>
+	<script>
+	
+	function moving(){
+	var span = window.document.getElementById("sp");
+	span.style.top = window.event.clientY;
+	span.style.left = window.event.clientX;
+	
+	}
+	
+	</script>
+</head>
+<body onmousemove="moving()">
+<span style="position:absolute; top:0; left:0" id="sp">
+
+	Milo
+</span>
+
+</body>

@@ -1,0 +1,51 @@
+<html>
+<head>
+	<script>
+	
+	var fs =10;
+	function moving() {
+	
+		var span = window.document.getElementById("sp");
+	
+		span.style.top = window.event.clientY;
+	
+		span.style.left = window.event.clientX;
+	
+		if (window.event.ctrlKey) {
+		++fs;
+		}
+	
+		if (window.event.altKey) {
+		--fs;
+		}
+	
+		span.style.fontSize = fs;
+	
+	}
+	
+	
+	function pickup() {
+	
+		var sp = window.document.getElementById("sp");
+		var t = window.document.getElementById("t");
+		
+		if (t.value != "") {
+		
+		sp.innerHTML = t.value;
+		
+		t.value = "";
+	
+		}
+	}
+	
+	</script>
+</head>
+
+<body onmousemove="moving()" onkeypress="keypress(event)">
+
+<input id="t" onmouseleave="pickup()">
+
+<span id="sp" style="position: absolute;"></span>
+
+</body>
+</html>

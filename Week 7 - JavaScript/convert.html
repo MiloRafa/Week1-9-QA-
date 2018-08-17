@@ -1,0 +1,97 @@
+<html>
+<head>
+	<script>
+	
+		var ones = [ '', 'One', 'Two', 'Three', 'Four', ' Five', ' Six', ' Seven', ' Eight', ' Nine', 'Ten' ,' Eleven', ' Twelve', ' Thirteen', ' Fourteen', ' Fifteen', ' Sixteen', ' Seventeen', ' Eighteen', ' Nineteen'];
+		
+		var tens = ['', '', ' Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Seventy', ' Eighty', ' Ninety'];
+		
+	
+		
+	function tens() {
+	
+			
+	}
+	function hundreds() {
+		
+		
+	}
+	
+	function convert() {
+	if( 	window.document.Form.T1.value ==""){ //checks if the T1 box has an empty value
+			window.alert("Please enter a value to return a output"); // return an alert box
+			window.document.Form.T1.focus(); //focuses on the box that returns an error
+		}
+		
+	else {
+		
+		var output = "";
+		switch (window.document.Form.T1.value.length) {
+		
+			case 0: 
+			
+			
+			break;
+			
+			case 1:
+				var str = parseInt(window.Form.T1.value);
+				output += ones[str];
+				window.document.Form.T2.value = output;
+			break;
+			
+			case 2:
+				var str = window.Form.T1.value; //creating a variable and storing the value of t1 in str
+				
+				if( (parseInt(str)) < 20 ){ // passes it into an int, then checks if str is less than 20
+					output += ones[str]; //output = output + the value of array ones at index str (which is the value entered as a int)
+				} else { //if it is not a number less than 20
+				output += tens[str.charAt(0)];	//getting the first character of the string and using that as the index for the tens array		
+				
+				output += ones[str.charAt(1)];	//getting the second character of the string and using that as the index for the units array		
+				
+				window.document.Form.T2.value = output ;
+				
+				}				
+			
+			break;
+			
+			case 3:
+				var str = window.Form.T1.value; //creating a variable and storing the value of t1 in str
+
+				output += ones[str.charAt(0)] + " hundred"  ;//getting the third character of the string and using that as the index for the hundreds array	
+				
+				if( ((parseInt(str)) % 100) < 20 && ((parseInt(str)) % 100) > 0){ // passes it into an int, then checks if str is less than 20
+					output += " and " + ones[str%100]; //output = output + the value of array ones at index str (which is the value entered as a int)
+				} else { //if it is not a number less than 20
+				output += " and" + tens[str.charAt(1)];	//getting the first character of the string and using that as the index for the tens array		
+				
+				output += ones[str.charAt(2)];	//getting the second character of the string and using that as the index for the units array		
+				
+				window.document.Form.T2.value = output ;
+				
+				}						
+				
+				window.document.Form.T2.value = output ;
+								
+				
+			break;
+		}
+	}
+	}
+			
+	</script>
+</head>
+<body>
+	<form name = "Form">
+	
+		
+		<b> Enter number : </b> <input Type = "Text" name = "T1"> <br>
+		<br>
+		<input Type = "Button" value = "Convert" onclick = "convert()" name = "B">		
+		<br>
+		<br>
+		
+		<b> Result : </b> <input Type = "Text" name = "T2"> <br>
+		
+	</form>
+</html>

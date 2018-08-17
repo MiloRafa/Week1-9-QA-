@@ -1,0 +1,38 @@
+<html>
+<head>
+	<script>
+	
+	var fs = 10;
+	
+	function moving(){
+	var span = window.document.getElementById("sp");
+	span.style.top = window.event.clientY;
+	span.style.left = window.event.clientX;
+	
+	}
+	
+	function increment(){
+	var span1 = window.document.getElementById("sp");
+	span1.style.fontSize = ++fs;
+	
+	}
+	
+	function decrement(){
+	var span1 = window.document.getElementById("sp");
+	span1.style.fontSize = --fs;
+``	
+	}
+	
+	</script>
+</head>
+<body onmousemove="moving()">
+<span style="position:absolute; top:0; left:0" id="sp">
+
+	Save Me.
+	
+</span>
+
+	<input Type ="button" value="Increment" onmousemove="increment()">
+	<input Type ="button" value="Decrement" onmousemove="decrement()">
+	
+</body>

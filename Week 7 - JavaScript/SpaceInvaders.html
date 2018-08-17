@@ -1,0 +1,96 @@
+
+
+<html>
+
+<script>
+
+		var timer;
+		var droppingblocks;
+		var BOX;
+		var fire;
+		
+		function dropblocks(){
+			BOX=document.getElementById("box");
+			BOX.style.top=parseInt(BOX.style.top)+10;
+			if(parseInt(BOX.style.top)>=800){
+				window.clearInterval(droppingblocks);
+				alert("lost the game");
+			}
+		}
+		
+		function onstart(){
+			droppingblocks=window.setInterval(dropblocks,1000);
+		}
+		function movecar()
+	{
+		//alert(event.keyCode);
+		
+		
+		var car=document.getElementById("car");
+		fire=document.getElementById("fire");
+		
+		if(event.keyCode==39){
+			if (parseInt(car.style.left)<=1500){
+				car.style.left=parseInt(car.style.left)+5;
+			}
+		}
+		if(event.keyCode==37){
+			if (parseInt(car.style.left)>=10){
+				car.style.left=parseInt(car.style.left)-5;
+			}
+		}
+		if(event.keyCode==32){
+			fire.style.top=800;
+			fire.style.left=11;//parseInt(car.style.left)+10;
+			fire.style.visibility='visible';
+			timer=window.setInterval(firing,1000);
+		}
+	}
+		
+		function firing(){
+			fire.style.top=parseInt(fire.style.top)-10;
+							
+
+			
+			if(( parseInt(fire.style.top)==parseInt(BOX.style.top)) && (parseInt(fire.style.left)==parseInt(BOX.style.left))){ 
+				alert("boooooooom");
+			}
+			
+			if(parseInt(fire.style.top)<=10){
+				alert("stop na yar");
+				window.clearInterval(timer);
+			}
+			
+			console.log(fire.style.top+","+fire.style.left+"---------------"+BOX.style.top+","+BOX.style.left);
+			
+			if( (parseInt(fire.style.top)==parseInt(BOX.style.top)) && (parseInt(fire.style.left)==parseInt(BOX.style.left)))
+			{
+			alert("hit");
+				
+			}
+			
+		}
+	 
+</script>
+
+
+<body onload="onstart()" onkeydown="movecar()">
+<span style="position:absolute;visibility:hidden" id="fire">
+*
+</span>
+<span style="position:absolute;top:800;left:11" id="car">
+<pre>
+::
+----
+</pre>
+</span>
+
+<span style="position:absolute;top:0;left:11" id="box">
+<Pre >
+ ----
+:    :
+ ----
+</pre>
+</span>
+</body>
+</html>

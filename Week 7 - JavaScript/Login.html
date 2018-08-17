@@ -1,0 +1,30 @@
+<html>
+<head>
+	<script>
+	
+	function check(){
+	
+		if(document.getElementById("A1").value==""){
+		
+		alert("First name is missing");
+	
+		document.getElementById("A1").focus();
+		return false;	
+	
+		}
+	}
+	
+	</script>
+</head>
+<body>
+
+<form name= "form" action= "process.html" method= "Post" onsubmit= "return check()">
+
+Username: <input type= "Text" name= "A" id="A1"><Br>
+<br>
+Password: <input file+ "Text" name= "B" id= "B1"></Br>
+<br>
+<input type = "Submit">
+</form>
+
+</body>
